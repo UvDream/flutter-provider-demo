@@ -8,7 +8,7 @@ class StreamPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('流'),
+        title: Text('流设置'),
       ),
       body: Center(
         child: StreamBuilder(
@@ -17,6 +17,7 @@ class StreamPage extends StatelessWidget {
           builder: (context, snapshot) {
             return Column(
               children: <Widget>[
+                Text('stream的应用'),
                 Text(Provider.of<CounterBloc>(context).count.toString()),
                 RaisedButton(
                   child: Text("+"),
