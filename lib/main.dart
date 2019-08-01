@@ -6,6 +6,7 @@ import './provider/stream.dart';
 import './provider/select.dart';
 
 void main() {
+  // Provide<T>会报错,添加这个不会报错,但是视图不会及时更新,原因见下面
   Provider.debugCheckInvalidValueType = null;
   final counter = CounterProvider();
   final textSize = 48;
