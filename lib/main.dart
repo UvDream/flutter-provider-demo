@@ -3,6 +3,7 @@ import './pages/home.dart';
 import './provider/counter.dart';
 import 'package:provider/provider.dart';
 import './provider/stream.dart';
+import './provider/select.dart';
 
 void main() {
 //  Provider.debugCheckInvalidValueType = null;
@@ -33,7 +34,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [],
+      providers: [
+        ChangeNotifierProvider(builder: (_) => SelectProvider()),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
