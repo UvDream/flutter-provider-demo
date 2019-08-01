@@ -6,7 +6,7 @@ import './provider/stream.dart';
 import './provider/select.dart';
 
 void main() {
-//  Provider.debugCheckInvalidValueType = null;
+  Provider.debugCheckInvalidValueType = null;
   final counter = CounterProvider();
   final textSize = 48;
   final stream = CounterBloc();
@@ -33,8 +33,15 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var select = SelectProvider();
     return MultiProvider(
       providers: [
+        // Provider 只能提供恒定的数据，不能通知依赖它的子部件刷新。提示也说的很清楚了，假如你想使用一个会发生 change 的 Provider，请使用下面的 Provider。
+        // ListenableProvider
+        // ChangeNotifierProvider
+        // ValueListenableProvider
+        // StreamProvider
+        // Provider<SelectProvider>.value(value: select)
         ChangeNotifierProvider(builder: (_) => SelectProvider()),
       ],
       child: MaterialApp(
