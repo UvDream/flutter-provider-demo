@@ -26,6 +26,12 @@ class MyHomePage extends StatelessWidget {
               },
               child: Text("+"),
             ),
+            RaisedButton(
+              onPressed: () {
+                Provider.of<CounterProvider>(context).reduce();
+              },
+              child: Text("-"),
+            ),
           ],
         ),
       ),

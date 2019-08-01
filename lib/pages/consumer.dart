@@ -24,6 +24,14 @@ class _TestPageState extends State<TestPage> {
                     style: TextStyle(
                       fontSize: textSize.toDouble(),
                     ),
+                  ),
+                  RaisedButton(
+                    child: Text("+"),
+                    onPressed: counter.increment,
+                  ),
+                  RaisedButton(
+                    child: Text("-"),
+                    onPressed: counter.reduce,
                   )
                 ],
               ),
